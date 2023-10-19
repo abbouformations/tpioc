@@ -2,33 +2,21 @@ package ma.formations.ioc.service;
 
 import ma.formations.ioc.dao.IDao;
 import ma.formations.ioc.service.model.Article;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//In this example, we are using the injection by constructor.
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+
 @Service
 public class ServiceImpl implements IService {
-    @Autowired
-    @Qualifier("dao1")
-    private IDao dao;
-/*
-    // Injection par modificateur
-    @Autowired
-    @Qualifier("dao2")
-    public void setDao(IDao dao) {
+    private final IDao dao;
+
+    public ServiceImpl(@Qualifier("dao1") IDao dao) {
         this.dao = dao;
     }
-*/
-    /*
-    // Injection par constructeur
-    @Autowired
-    public ServiceImpl(@Qualifier("dao2") IDao dao) {
-        super();
-        this.dao = dao;
-    }
-*/
 
     @Override
     public List<Article> getAll() {
