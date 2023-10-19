@@ -31,5 +31,20 @@ public class TestService {
                 () -> Assertions.assertEquals(25000d, service.findById(1L).getPrice(), "First article price is not correct"),
                 () -> Assertions.assertEquals(5d, service.findById(1L).getQuantity(), "First article quantity is not correct"));
     }
+/*
+    @Test
+    void testDAOEquals() {
+        IDao dao1 = context.getBean(DaoImpl1.class);
+        IDao dao2 = context.getBean(DaoImpl1.class);
+        Assertions.assertSame(dao1, dao2);
+    }
+
+
+    @Test
+    void testserviceEqual() {
+        IService service1 = context.getBean(ServiceImpl.class);
+        IService service2 = context.getBean(ServiceImpl.class);
+        Assertions.assertSame(service1, service2);
+    }*/
 
 }
