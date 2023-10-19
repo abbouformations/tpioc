@@ -1,11 +1,13 @@
 package ma.formations.ioc.dao;
 
 import ma.formations.ioc.service.model.Article;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-//@Repository
-//@Qualifier("dao1")
+@Repository
+@Qualifier("dao1")
 public class DaoImpl1 implements IDao {
     private static final List<Article> repository = List.of(
             new Article(1L, "PC HP I7", 25000d, 5d),
