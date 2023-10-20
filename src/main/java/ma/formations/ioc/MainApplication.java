@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "ma.formations.ioc")
 public class MainApplication {
 
-/*    @Bean
+/*  // Injecting by using the Factory
+    @Bean
     @Qualifier("dao1")
     public IDao getDao() {
         return new DaoImpl1();
